@@ -2,24 +2,28 @@ package com.blz.empwage;
 
 public class EmployeeWageBuilder {
     public static void main(String[] args) {
-        // Displaying Welcome Message
-        System.out.println("Welcome to Employee Wage Computation Program");
 
-        int IS_PRESENT=1;
+        // Variables
+        int IS_PRESENT = 1;
+        int WAGE_PER_HR = 20;
+        int empHrs = 0;
+        int empWage = 0;
 
         /*
          * Generating random number using math.random(), Converting it to nearest
          * possible integer number using Math.floor(), By doing % 2 we will only get
-         * either number 0 or 1.
+         * either number 0 Or 1
          */
         double empCheck = Math.floor(Math.random() * 10) % 2;
 
-        // Checking Employee is Present or Absent
+        // Calculating Daily Employee Wage
         if (empCheck == IS_PRESENT) {
-            System.out.println("Employee is Present");
+            empHrs = 8;
         } else {
-            System.out.println("Employee is Absent");
+            empHrs = 0;
         }
-
+        empWage = WAGE_PER_HR * empHrs;
+        System.out.println("Employee Wage :" + empWage);
     }
+
 }
