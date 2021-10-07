@@ -4,20 +4,23 @@ public class EmployeeWageBuilder {
     public static void main(String[] args) {
 
         // Variables
-        int IS_PRESENT = 1;
+        int IS_PART_TIME = 1;
+        int IS_FULL_TIME = 2;
         int WAGE_PER_HR = 20;
         int empHrs = 0;
         int empWage = 0;
 
         /*
          * Generating random number using math.random(), Converting it to nearest
-         * possible integer number using Math.floor(), By doing % 2 we will only get
-         * either number 0 Or 1
+         * possible integer number using Math.floor(), By doing % 3 we will only get
+         * either number 0,1 or 2
          */
-        double empCheck = Math.floor(Math.random() * 10) % 2;
+        double empCheck = Math.floor(Math.random() * 10) % 3;
 
-        // Calculating Daily Employee Wage
-        if (empCheck == IS_PRESENT) {
+        // Checking Part Time & Full Time Employee and Wage
+        if (empCheck == IS_PART_TIME) {
+            empHrs = 4;
+        } else if (empCheck == IS_FULL_TIME) {
             empHrs = 8;
         } else {
             empHrs = 0;
