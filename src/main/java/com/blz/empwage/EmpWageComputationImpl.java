@@ -1,43 +1,35 @@
 package com.blz.empwage;
 
-public class EmpWageComputationImpl {
+import java.util.ArrayList;
 
-    private static final int IS_PART_TIME = 1;
-    private static final int IS_FULL_TIME = 2;
+public class EmpWageComputationImpl implements EmpWageInterface {
     public int numOfCompany = 0;
-    private Company[] companyAraay;
+    private ArrayList<Company> companyAraay;
 
-    public EmpWageComputationImpl(){
-        companyAraay = new Company[5];
+    public EmpWageComputationImpl() {
+        companyAraay = new ArrayList<Company>();
     }
 
-    void addCompany(String company, int wagePerHrs, int numOfWorkinDays, int maxHrsPerMonth){
-        companyAraay[numOfCompany] = new Company(company, wagePerHrs, numOfWorkinDays, maxHrsPerMonth);
+    public void addCompany(String company, int wagePerHrs, int numOfWorkinDays, int maxHrsPerMonth) {
+        companyAraay.add(numOfCompany, new Company(company, wagePerHrs, numOfWorkinDays, maxHrsPerMonth));
         numOfCompany++;
     }
 
-    void computEmpWage(){
-        for (int i = 0; i < numOfCompany; i++){
-            companyAraay[i].setTotalEmpWage(this.computEmpWage(companyAraay[i]));
-            System.out.println(companyAraay[i]);
+    public void computEmpWage() {
+        for (int i = 0; i < numOfCompany; i++) {
+            companyAraay.get(i).setTotalEmpWage(this.computEmpWage(companyAraay.get(i)));
+            System.out.println(companyAraay.get(i));
         }
-
     }
 
-    public static int computEmpWage(Company company ){
-
+    public int computEmpWage(Company company) {
         int empHrs = 0;
         int totalEmpHrs = 0;
         int totalWorkingDays = 0;
 
-        while(totalEmpHrs <= company.maxHrsPerMonth && totalWorkingDays < company.numOfWorkinDays) {
+        while (totalEmpHrs <= company.maxHrsPerMonth && totalWorkingDays < company.numOfWorkinDays) {
 
             totalWorkingDays++;
-            /*
-             * Generating random number using math.random(),
-             * Converting it to nearest possible integer number using Math.floor(),
-             * By doing % 3 we will only get either number 0 , 1 or 2.
-             */
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
             switch (empCheck) {
                 case IS_PART_TIME:
@@ -55,6 +47,4 @@ public class EmpWageComputationImpl {
         }
         return totalEmpHrs * company.wagePerHrs;
     }
-
 }
-
