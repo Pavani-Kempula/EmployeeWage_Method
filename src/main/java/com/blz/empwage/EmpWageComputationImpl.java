@@ -55,5 +55,6 @@ public class EmpWageComputationImpl {
         }
         return totalEmpHrs * company.wagePerHrs;
     }
+
 }
 

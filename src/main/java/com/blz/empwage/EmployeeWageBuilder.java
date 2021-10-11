@@ -1,15 +1,15 @@
 package com.blz.empwage;
 
-import java.lang.*;
 /*
-* @author Pavani
-*
-* With respect to employees attendance,
-* Calculating employee daily and monthly,
-* wage as per their Company's parameters
-*/
+ * @author Pavani
+ *
+ * With respect to employees attendance,
+ * Calculating employee daily and monthly,
+ * wage as per their Company's parameters
+ */
 public class EmployeeWageBuilder {
     public static void main(String[] args){
+
         // Displaying Welcome Message
         System.out.println("------------------Welcome To Employee Wage Computation------------------");
 

@@ -25,5 +25,4 @@ public class Company {
         return "company Name ='" + company + '\'' + ", \nTotal Emploee Wage =" + totalEmpWage + "\n---------------------------------------------------------------------";
     }
 
-
 }
