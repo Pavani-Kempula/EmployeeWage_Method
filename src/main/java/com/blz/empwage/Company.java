@@ -24,6 +24,4 @@ public class Company {
     public String toString() {
         return "company Name ='" + company + '\'' + ", \nTotal Emploee Wage =" + totalEmpWage + "\n---------------------------------------------------------------------";
     }
-
-
 }
