@@ -20,5 +20,4 @@ public class EmployeeWageBuilder {
         empWageComputation.computEmpWage();
     }
 
-
 }
